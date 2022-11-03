@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Heart Death Prediction</title>
+</head>
+<body>
+  <div class="container">
+  
+    <center>
+      <h1>Heart Condition Predictor</h1>
+    </center>
+      <p>
+        <b>Medical checkups </b>have become so repetitive nowadays. Almost every part of the <i> human body </i>needs check up atleast once a year.<br />
+        <em>You are better safe than sorry.</em><br />
+        In the past couple of years, health checkups have been so on demand that no medical practitioner has time to spare.<br />
+        Despite the fact that it is safe to get a health checkup from a well-renowned doctor, people always tend to get a second opinion
+        on the same.
+        Insecurity amongst the people has increased by leaps and bounds.
+        Amongst the patients, one of the most star-crossed patients are heart-patients.
+        Heart patients have very low hopes on their survivability and hence make the doctor's job difficult.
+        So, this website provides an easy to use interface for the users to analyze their health report cards and figure out how their
+        heart is working.
+        Almost <b>100%</b> of the people have a healthy heart.
+        It is hope that they lack.
+        Enter the details as mentioned below and good luck!!
+      </p>
+      
+  {% if result %}
+  <h1>The heart condition is {{result}}.</h1>
+{% endif %}
+      <hr style="height:4px;border-width:0;color:gray;background-color:gray">
+  <form action="" method="POST">
+    {% csrf_token %}
+
+  <div class="form-group row">
+    <label for="age" class="col-sm-2 col-form-label">Enter your age</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="age" name="age" placeholder="Age">
+    </div>
+    <div>
+      <small id="age" class="text-muted">
+      <label for="age"> Remember Age is just a number.</label>
+     </small>
+    </div>
+  </div>
+  
+
+  <div class="form-group row">
+    <label for="gender" class="col-sm-2 col-form-label">Gender: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="gender" name="gender" placeholder="Male/Female">
+    </div>
+  </div>
+
+  
+  <div class="form-group row">
+    <label for="chest" class="col-sm-2 col-form-label">Chest Pain Type: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="chest" name="chest" placeholder="TA/ATA/NP/AS">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="restingbp" class="col-sm-2 col-form-label">Resting Blood Pressure</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="restingbp" name="restingbp" placeholder="Resting Blood Pressure in mm Hg">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="cholestrol" class="col-sm-2 col-form-label">Serum Cholestrol</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="cholestrol" name="cholestrol" placeholder="Cholestrol in mm/dl">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="sugar" class="col-sm-2 col-form-label">Blood Sugar</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="sugar" name="sugar" placeholder="Sugar in mm/dl">
+    </div>
+  </div>
+ 
+  <div class="form-group row">
+    <label for="age" class="col-sm-2 col-form-label">Resting ElectroCardiogram Results: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="ecg" name="ecg" placeholder="Normal/ECG">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="heartrate" class="col-sm-2 col-form-label">Maximum Heart Rate</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="heartrate" name="heartrate" placeholder="Heart-Rate">
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="exercise" class="col-sm-2 col-form-label">Do you get exercise Angina? </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="exercise" name="exercise" placeholder="Y/N">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="strate" class="col-sm-2 col-form-label">Numeric value of ST depression</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="strate" name="strate" placeholder="Enter the numeric value of ST depression">
+    </div>
+  </div>
+ 
+  <div class="form-group row">
+    <label for="stdepth" class="col-sm-2 col-form-label">Trend of ST depression: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="stdepth" name="stdepth"s placeholder="Up/Flat/Down">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" name="submit">Submit!</button>
+    </div>
+  </div>
+</form>
+
+</div>
+</body>
+</html>
